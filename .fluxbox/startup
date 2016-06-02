@@ -1,0 +1,36 @@
+#!/bin/bash
+
+#
+# run background processes
+#
+rm -fr $HOME/.local/share/Trash/files/* $HOME/.local/share/Trash/info/* &
+
+# allow root to connect to X server (for sudo and stuff)
+xhost +si:localuser:root
+
+# prepare environment to use gpg-agent
+eval $(gpg-agent --daemon)
+
+#
+# run X applications
+#
+(
+  # wait for fluxbox to start
+  while ! pidof fluxbox
+  do
+    sleep 0.5
+  done
+  sleep 0.5
+
+  ( xscreensaver-command -exit ; xscreensaver ) &
+  #krandrtray & # do not use - it changes fonts...
+  wicd-client -t &
+  #xfce4-power-manager &
+  akregator --hide-mainwindow  &
+  #keepassx &
+) &
+
+#
+# RUN FLUXBOX
+#
+exec ssh-agent fluxbox -log "/tmp/.fluxbox-${USER}-$(date +%s)-XXXXXXXXX.log"
