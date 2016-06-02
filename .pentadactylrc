@@ -1,0 +1,4 @@
+set defsearch=wikipedia
+set guioptions=rbmBNs
+"set strictfocus=duckduckgo.com:laissez-faire,wikipedia.org:laissez-faire,google.pl:laissez-faire,wolframalpha.com:laissez-faire,ixquick.com:laissez-faire,*:despotic
+set strictfocus=*:laissez-faire
