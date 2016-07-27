@@ -12,3 +12,5 @@ termcapinfo xterm ti@:te@
 #shell bash
 #setenv LC_CTYPE en_US.UTF-8
 #defutf8 on
+
+vbell off
