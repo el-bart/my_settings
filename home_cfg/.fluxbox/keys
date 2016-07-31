@@ -23,8 +23,8 @@ OnWindow Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing BottomRight}
 OnDesktop Mouse1 :HideMenus
 OnDesktop Mouse2 :WorkspaceMenu
 OnDesktop Mouse3 :RootMenu
-OnDesktop Mouse4 :NextWorkspace
-OnDesktop Mouse5 :PrevWorkspace
+#OnDesktop Mouse4 :NextWorkspace
+#OnDesktop Mouse5 :PrevWorkspace
 
 ! fluxbox-update_configs added '(workspace=[current])' to (Next|Prev)(Window|Group)
 ! check lines marked by 'FBCV13' if they are correctly updated
@@ -46,13 +46,6 @@ OnTitlebar Mouse3 :WindowMenu
 !mouse actions added by fluxbox-update_configs
 OnWindow Mod1 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
 OnWindow Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing BottomRight}
-
-!mouse actions added by fluxbox-update_configs
-OnDesktop Mouse1 :HideMenus
-OnDesktop Mouse2 :WorkspaceMenu
-OnDesktop Mouse3 :RootMenu
-OnDesktop Mouse4 :NextWorkspace
-OnDesktop Mouse5 :PrevWorkspace
 
 ! fluxbox-update_configs added '(workspace=[current])' to (Next|Prev)(Window|Group)
 ! check lines marked by 'FBCV13' if they are correctly updated
