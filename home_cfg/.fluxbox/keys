@@ -201,4 +201,4 @@ Mod4 d :ShowDesktop
 #Control Mod1 o :Exec xrandr -o normal
 
 # misc
-None Print :Exec ksnapshot
+None Print :Exec spectacle
