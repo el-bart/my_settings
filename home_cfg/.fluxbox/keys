@@ -176,6 +176,7 @@ Control Mod1 t :Exec konsole
 Control Mod1 q :Exec konqueror
 Control Mod1 h :Exec konqueror ~/
 Control Mod1 w :Exec firefox
+Control Mod1 o :Exec torbrowser-launcher
 Control Mod1 c :Exec chromium
 # screen lock
 #Control Mod1 l :ExecCommand xtrlock
