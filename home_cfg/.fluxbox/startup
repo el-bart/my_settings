@@ -22,7 +22,6 @@ eval $(gpg-agent --daemon)
   done
   sleep 0.5
 
-  ( xscreensaver-command -exit ; xscreensaver ) &
   #krandrtray & # do not use - it changes fonts...
   wicd-client -t &
   #xfce4-power-manager &

@@ -180,7 +180,7 @@ Control Mod1 o :Exec torbrowser-launcher
 Control Mod1 c :Exec chromium
 # screen lock
 #Control Mod1 l :ExecCommand xtrlock
-Control Mod1 l :ExecCommand ~/bin/xs-lock
+Control Mod1 l :ExecCommand ~/bin/blank-lock
 
 # window/desktop opperations
 Control Mod1 Return :MaximizeWindow
