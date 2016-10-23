@@ -27,9 +27,11 @@ eval $(gpg-agent --daemon)
   #xfce4-power-manager &
   akregator --hide-mainwindow  &
   #keepassx &
+  prevent_monitor_sleep
 ) &
 
 #
 # RUN FLUXBOX
 #
 exec ssh-agent fluxbox -log "/tmp/.fluxbox-${USER}-$(date +%s)-XXXXXXXXX.log"
+exit $?
