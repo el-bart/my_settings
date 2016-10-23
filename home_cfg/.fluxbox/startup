@@ -3,7 +3,6 @@
 #
 # run background processes
 #
-
 rm -fr $HOME/.local/share/Trash/files/* $HOME/.local/share/Trash/info/* &
 
 # allow root to connect to X server (for sudo and stuff)
@@ -13,35 +12,8 @@ xhost +si:localuser:root
 eval $(gpg-agent --daemon)
 
 #
-# helper functions
-#
-
-function run_if_present
-{
-  if ! type "$1" > /dev/null 2>&1
-  then
-    echo "$0: cannot run '$1' - skipping..." >&2
-    return
-  fi
-  "$@"
-}
-
-function periodically_change_wallpaper
-{
-  fbsetroot -solid black
-  type rand_wallpaper || exit 0
-  FBP="`pidof fluxbox`"
-  while [ "`pidof fluxbox`" = "$FBP" ]
-  do
-    rand_wallpaper
-    sleep 1500
-  done
-}
-
-#
 # run X applications
 #
-
 (
   # wait for fluxbox to start
   while ! pidof fluxbox
@@ -50,17 +22,15 @@ function periodically_change_wallpaper
   done
   sleep 0.5
 
-  # run all apps...
-  #run_if_present xfce4-power-manager &
-  #run_if_present krandrtray &
-  #run_if_present keepassx &
-  run_if_present periodically_change_wallpaper &
-  run_if_present wicd-client -t &
-  run_if_present akregator --hide-mainwindow  &
-  run_if_present transmission-gtk -m &
-  run_if_present prevent_monitor_sleep &
+  ( set -e ; fbsetroot -solid black ; FBP="`pidof fluxbox`" ; while [ "`pidof fluxbox`" = "$FBP" ] ; do rand_wallpaper ; sleep 1500 ; done ) &
+  #xfce4-power-manager &
+  #krandrtray &
+  #keepassx &
+  wicd-client -t &
+  transmission-gtk -m &
+  akregator --hide-mainwindow  &
+  prevent_monitor_sleep &
 ) &
-
 
 #
 # RUN FLUXBOX
