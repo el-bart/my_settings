@@ -34,4 +34,3 @@ eval $(gpg-agent --daemon)
 # RUN FLUXBOX
 #
 exec ssh-agent fluxbox -log "/tmp/.fluxbox-${USER}-$(date +%s)-XXXXXXXXX.log"
-exit $?
