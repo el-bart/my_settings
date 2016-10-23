@@ -179,8 +179,8 @@ Control Mod1 w :Exec firefox
 Control Mod1 o :Exec torbrowser-launcher
 Control Mod1 c :Exec chromium
 # screen lock
-#Control Mod1 l :ExecCommand xtrlock
-Control Mod1 l :ExecCommand ~/bin/blank-lock
+Control Mod1 Shift l :ExecCommand xtrlock
+Control Mod1       l :ExecCommand blank-lock
 
 # window/desktop opperations
 Control Mod1 Return :MaximizeWindow
