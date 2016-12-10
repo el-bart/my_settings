@@ -1,0 +1,10 @@
+# testing
+#deb     http://www.emdebian.org/debian/  testing main
+#deb-src http://www.emdebian.org/debian/  testing main
+
+# stable
+#deb     http://www.emdebian.org/debian/  stable main
+#deb-src http://www.emdebian.org/debian/  stable main
+
+# g++-4.7 - unofficial...
+#deb http://emdebian.org/~thibg/repo/ sid main

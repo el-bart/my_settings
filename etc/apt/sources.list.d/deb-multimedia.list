@@ -1,0 +1,7 @@
+# testing
+deb     http://www.deb-multimedia.org testing main non-free
+deb-src http://www.deb-multimedia.org testing main non-free
+
+# stable
+deb     http://www.deb-multimedia.org stable main non-free
+deb-src http://www.deb-multimedia.org stable main non-free
