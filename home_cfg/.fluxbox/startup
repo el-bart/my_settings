@@ -28,7 +28,7 @@ eval $(gpg-agent --daemon)
   #keepassx &
   wicd-client -t &
   transmission-gtk -m &
-  akregator --hide-mainwindow  &
+  quiterss &
   prevent_monitor_sleep &
 ) &
 
