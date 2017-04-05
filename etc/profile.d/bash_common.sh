@@ -1,6 +1,6 @@
 [ -d ~/bin ] && export PATH="$PATH:${HOME}/bin"
 
-export PRINTER="CLP-365W"
+#export PRINTER="xxx"
 export HISTCONTROL="ignoredups"
 export LC_COLLATE="POSIX"
 export EDITOR="vim"
@@ -20,7 +20,6 @@ alias ....="cd ../../.."
 alias beep="echo -en '\x07'"
 alias lock="/usr/bin/clear ; /usr/bin/vlock -a"
 alias cd.='cd "`readlink -f .`"'
-#alias mc="/usr/bin/mc -a"
 alias vd='vim -d'
 alias grep='/bin/grep --color'
 alias sbc='source /etc/bash_completion'

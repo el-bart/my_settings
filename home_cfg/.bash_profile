@@ -14,5 +14,3 @@ fi
 #if [ -d ~/bin ] ; then
 #  export PATH=~/bin:"${PATH}"
 #fi
-
-source ~/.profile_common

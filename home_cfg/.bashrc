@@ -51,6 +51,3 @@ esac
 #if [ -f /etc/bash_completion ]; then
 #    . /etc/bash_completion
 #fi
-
-# run profile, if it exists
-source ~/.profile_common
