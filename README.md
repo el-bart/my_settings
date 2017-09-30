@@ -1,2 +1,3 @@
-# my_settings
-common config files i use daily.
+# my\_settings
+
+common config files, i use daily.
