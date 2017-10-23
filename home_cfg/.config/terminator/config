@@ -1,0 +1,32 @@
+[global_config]
+  enabled_plugins = ,
+  extra_styling = False
+  homogeneous_tabbar = False
+  inactive_color_offset = 1.0
+  scroll_tabbar = True
+  title_font = Sans 8
+  title_inactive_bg_color = "#babdb6"
+  title_inactive_fg_color = "#2e3436"
+  title_transmit_bg_color = "#babdb6"
+  title_transmit_fg_color = "#2e3436"
+  title_use_system_font = False
+[keybindings]
+  line_down = <Shift>Down
+  line_up = <Shift>Up
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    copy_on_selection = True
+    cursor_color = "#aaaaaa"
+    font = Mono 8
+    login_shell = True
+    scrollback_lines = 50000
+    use_system_font = False
