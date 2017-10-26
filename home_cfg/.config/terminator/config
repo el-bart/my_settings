@@ -11,8 +11,58 @@
   title_transmit_fg_color = "#2e3436"
   title_use_system_font = False
 [keybindings]
+  broadcast_all = None
+  broadcast_group = None
+  broadcast_off = None
+  close_term = None
+  close_window = None
+  cycle_next = None
+  cycle_prev = None
+  edit_tab_title = None
+  edit_terminal_title = None
+  edit_window_title = None
+  full_screen = None
+  go_down = None
+  go_left = None
+  go_next = None
+  go_prev = None
+  go_right = None
+  go_up = None
+  group_all = None
+  group_all_toggle = None
+  group_tab = None
+  group_tab_toggle = None
+  help = None
+  hide_window = None
+  insert_number = None
+  insert_padded = None
+  layout_launcher = None
   line_down = <Shift>Down
   line_up = <Shift>Up
+  move_tab_left = None
+  move_tab_right = None
+  new_tab = None
+  new_terminator = None
+  next_tab = None
+  page_down_half = <Primary>Page_Down
+  page_up_half = <Primary>Page_Up
+  prev_tab = None
+  reset = None
+  reset_clear = None
+  resize_down = None
+  resize_left = None
+  resize_right = None
+  resize_up = None
+  rotate_ccw = None
+  rotate_cw = None
+  scaled_zoom = None
+  search = None
+  split_horiz = None
+  split_vert = None
+  toggle_scrollbar = None
+  toggle_zoom = None
+  ungroup_all = None
+  ungroup_tab = None
 [layouts]
   [[default]]
     [[[child1]]]
@@ -29,4 +79,5 @@
     font = Mono 8
     login_shell = True
     scrollback_lines = 50000
+    show_titlebar = False
     use_system_font = False
