@@ -14,3 +14,5 @@ termcapinfo xterm ti@:te@
 #defutf8 on
 
 vbell off
+
+defshell -bash # dash makes it a login shell
