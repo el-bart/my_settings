@@ -44,8 +44,8 @@
   new_tab = None
   new_terminator = None
   next_tab = None
-  page_down_half = <Primary>Page_Down
-  page_up_half = <Primary>Page_Up
+  page_down_half = <Shift>Page_Down
+  page_up_half = <Shift>Page_Up
   prev_tab = None
   reset = None
   reset_clear = None
