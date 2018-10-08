@@ -276,6 +276,7 @@ bindsym Control+Mod1+h exec "konqueror ~/"
 bindsym Control+Mod1+w exec firefox
 bindsym Control+Mod1+o exec torbrowser-launcher
 bindsym Control+Mod1+c exec chromium
+bindsym Control+Mod1+b exec qutebrowser
 # screen locking
 bindsym Control+Mod1+l       exec xtrlock
 bindsym Control+Mod1+Shift+l exec blank-lock
@@ -302,3 +303,4 @@ for_window [class="Tor Browser"] floating enable
 exec --no-startup-id wicd-client -t
 exec --no-startup-id transmission-gtk -m
 exec --no-startup-id quiterss
+exec --no-startup-id rand_wallpaper_service
