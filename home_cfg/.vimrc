@@ -45,3 +45,5 @@ let g:ycm_extra_conf_globlist = ['~/prjs/*/*','!/*']
 
 " gvim stuff
 "colorscheme torte
+
+set hlsearch
