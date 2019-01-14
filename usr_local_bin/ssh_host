@@ -1,2 +1,2 @@
 #!/bin/sh
-exec ssh -Y "$(basename "$0")" "$@"
+exec ssh -X "$(basename "$0")" "$@"
