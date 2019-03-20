@@ -291,6 +291,8 @@ exec --no-startup-id ~/bin/.background_wallpaper_changer
 exec --no-startup-id prevent_monitor_sleep
 # allow root to connect to X server (for sudo and stuff)
 exec --no-startup-id xhost +si:localuser:root
+# background player daemon
+exec --no-startup-id mopidy
 
 # NOTE: use 'xprop' to get window's properties
 # some windows are meant to be floating
