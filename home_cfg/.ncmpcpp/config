@@ -1,0 +1,18 @@
+browser_sort_mode = name
+default_place_to_search_in = database
+user_interface = alternative
+allow_for_physical_item_deletion = no
+jump_to_now_playing_song_at_start = no
+ask_before_clearing_playlists = yes
+clock_display_seconds = yes
+display_bitrate = yes
+display_volume_level = yes
+display_remaining_time = no
+regular_expressions = perl
+mouse_support = no
+media_library_sort_by_mtime = no
+external_editor = vim
+
+#song_list_format    = %a: %y %A: %N %t
+#song_status_format  = %a: %y %A: %N %t
+#song_library_format = %a: %y %A: %N %t
