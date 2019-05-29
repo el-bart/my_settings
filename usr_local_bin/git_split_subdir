@@ -1,0 +1,33 @@
+#!/bin/bash -e
+if [ $# -ne 3 ]
+then
+  echo "$0 <input_repo> <dir> <output_repo>" >&2
+  exit 1
+fi
+
+REPO_IN=$(readlink -e "$1")
+shift
+DIR=$(basename "$1")
+shift
+mkdir "$1"
+REPO_OUT=$(readlink -e "$1")
+shift
+
+TMP=$(mktemp -d)
+cd "$TMP"
+
+echo "$0: preparing new history, containing only '$DIR' directory"
+git clone "$REPO_IN" "rin"
+cd "rin"
+BR_NAME="new_master_$RANDOM"
+git subtree split -P "$DIR" -b "$BR_NAME"
+
+echo "$0: clonning to a new repo"
+git init "$REPO_OUT"
+cd "$REPO_OUT"
+git pull "$TMP/rin" "$BR_NAME"
+
+echo "$0: cleanup"
+rm -rf "$TMP"
+
+echo "$0: all done - enojoy new repo in $REPO_OUT"

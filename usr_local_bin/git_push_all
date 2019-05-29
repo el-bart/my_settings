@@ -1,0 +1,17 @@
+#!/bin/bash
+set -eu -o pipefail
+APP=$(basename "$0")
+
+echo "$APP: known remotes:"
+git remote -v
+
+for remote in $(git remote)
+do
+  echo
+  echo "$APP: --------- $remote ----------"
+  git push --all  $remote
+  git push --tags $remote
+done
+
+echo
+echo "$APP: all done"

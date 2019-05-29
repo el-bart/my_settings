@@ -1,0 +1,2 @@
+#!/bin/bash -e
+exec git difftool --tool=kdiff3 -y "$@"
