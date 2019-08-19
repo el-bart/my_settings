@@ -293,6 +293,7 @@ bindsym Print exec spectacle
 
 # removing thrash objects, if sth is left out
 exec_always --no-startup-id rm -fr ~/.local/share/Trash/files/* ~/.local/share/Trash/info/*
+exec_always --no-startup-id rm -fr ~/.cache/dmenu_run
 # automatically changing wallpaper every now and then... :)
 exec --no-startup-id ~/bin/.background_wallpaper_changer
 # make sure monitor does not go into sleep mode
