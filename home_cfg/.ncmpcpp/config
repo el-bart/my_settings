@@ -1,7 +1,7 @@
 browser_sort_mode = name
 default_place_to_search_in = database
 user_interface = alternative
-allow_for_physical_item_deletion = no
+allow_for_physical_item_deletion = yes
 jump_to_now_playing_song_at_start = no
 ask_before_clearing_playlists = yes
 clock_display_seconds = yes
