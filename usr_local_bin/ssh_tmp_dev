@@ -4,4 +4,4 @@
 # very usefull for test instancess that often change and accessing local services from docker.
 #
 set -e
-exec ssh -X -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null "$@"
+exec ssh -X -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o LogLevel=ERROR "$@"

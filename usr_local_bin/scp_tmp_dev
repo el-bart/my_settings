@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-# script for doing SSH into an environment we do not really care about security.
+# script for doing SCP into an environment we do not really care about security.
 # very usefull for test instancess that often change and accessing local services from docker.
 #
 set -e
-exec scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null "$@"
+exec scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o LogLevel=ERROR "$@"
