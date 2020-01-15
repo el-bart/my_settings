@@ -1,3 +1,5 @@
 # ignoring VIM's temporary files
 *.swp
 *.swo
+# git tmp files
+*.orig
