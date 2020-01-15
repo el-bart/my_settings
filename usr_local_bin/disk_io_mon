@@ -11,8 +11,7 @@ DT=$2
 shift 2
 
 iostat -dym -p "$DEV" "$DT" \
-  | grep --line-buffered "^$DEV" \
-  | stdbuf -oL -eL \
-      sed 's#\.[0-9]\+##' \
-  | stdbuf -oL -eL \
-      awk '{ print "T", $2, "R", $3 "M", "W", $4 "M" }'
+  | stdbuf -oL -eL tail -n +2 \
+  | stdbuf -oL -eL grep -v -e '^Device' -e '^$' \
+  | stdbuf -oL -eL sed 's#\.[0-9]\+##' \
+  | stdbuf -oL -eL awk '{ print "T", $2, "R", $3 "M", "W", $4 "M" }'
