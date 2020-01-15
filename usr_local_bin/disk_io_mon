@@ -12,4 +12,7 @@ shift 2
 
 iostat -dym -p "$DEV" "$DT" \
   | grep --line-buffered "^$DEV" \
-  | awk '{ print "T", $2, "R", $3 "M", "W", $4 "M" }'
+  | stdbuf -oL -eL \
+      sed 's#\.[0-9]\+##' \
+  | stdbuf -oL -eL \
+      awk '{ print "T", $2, "R", $3 "M", "W", $4 "M" }'
