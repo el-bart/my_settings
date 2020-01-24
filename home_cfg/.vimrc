@@ -37,11 +37,11 @@ set background=dark
 set number
 
 " clang-format
-map <C-K> :pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>
-imap <C-K> <ESC>:pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>i
+"map <C-K> :pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>
+"imap <C-K> <ESC>:pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>i
 
 " you-complete-me
-let g:ycm_extra_conf_globlist = ['~/prjs/*/*','!/*']
+"let g:ycm_extra_conf_globlist = ['~/prjs/*/*','!/*']
 
 " gvim stuff
 "colorscheme torte
