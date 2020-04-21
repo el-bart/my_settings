@@ -3,6 +3,7 @@
 #export PRINTER="xxx"
 export HISTCONTROL="ignoredups"
 export LC_COLLATE="POSIX"
+export LC_TIME="POSIX"
 export EDITOR="vim"
 
 umask 022
