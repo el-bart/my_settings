@@ -22,5 +22,7 @@ do
       exit "$?"
     fi
   done
-  sleep "$((DELAY++))"
+  echo "$0: no internet - waiting for $DELAY [s]"
+  sleep "$DELAY"
+  DELAY=$((DELAY >= 100 ? 50 : DELAY+1))
 done
