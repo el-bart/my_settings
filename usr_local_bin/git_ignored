@@ -1,0 +1,3 @@
+#!/bin/bash
+set -eu -o pipefail
+git status --ignored -s | cut -b4-
