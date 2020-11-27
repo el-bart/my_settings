@@ -1,0 +1,24 @@
+#!/bin/bash
+set -eu -o pipefail
+APP=$(basename "$0")
+
+GREP_ARGS=()
+while grep -q '^-' <<< "$1"
+do
+  GREP_ARGS+=("$1")
+  shift 1
+done
+
+if [ $# -lt 2 ]
+then
+  echo "$APP [<grep_flag1> <grep_flag2> ...] <grep_pattern> <file1.pdf> [<file2.pdf> <file3.pdf>...]" >&2
+  exit -2
+fi
+
+PATTERN="$1"
+shift 1
+
+for f in "$@"
+do
+  pdf2txt "$f" | grep "${GREP_ARGS[@]}" -- "$PATTERN" | awk "{ print \"$f: \" \$0 }"
+done
