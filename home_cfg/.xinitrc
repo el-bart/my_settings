@@ -8,4 +8,4 @@ xset dpms 0 0 0
 xset s off
 
 # run required window manager
-exec /usr/bin/startfluxbox
+exec /usr/bin/i3
