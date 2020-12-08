@@ -1,0 +1,38 @@
+section: screens
+	pixy:
+		halfDuplexCapsLock = false
+		halfDuplexNumLock = false
+		halfDuplexScrollLock = false
+		xtestIsXineramaUnaware = false
+		switchCorners = none 
+		switchCornerSize = 0
+	necropolis:
+		halfDuplexCapsLock = false
+		halfDuplexNumLock = false
+		halfDuplexScrollLock = false
+		xtestIsXineramaUnaware = false
+		switchCorners = none 
+		switchCornerSize = 0
+end
+
+section: aliases
+end
+
+section: links
+	pixy:
+		right = necropolis
+	necropolis:
+		left = pixy
+end
+
+section: options
+	relativeMouseMoves = false
+	screenSaverSync = true
+	win32KeepForeground = false
+	clipboardSharing = true
+	switchCorners = none 
+	switchCornerSize = 0
+	keystroke(Alt+Shift+t) = switchToScreen(necropolis)
+	keystroke(Alt+Shift+r) = switchToScreen(pixy)
+end
+
