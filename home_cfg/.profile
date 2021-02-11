@@ -16,7 +16,7 @@ echo
 echo
 
 # show tasks to be done
-task long
+task long -BLOCKED
 
 # proxy for TOR
 #export http_proxy=http://127.0.0.1:8118/
