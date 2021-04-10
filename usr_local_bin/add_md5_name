@@ -1,0 +1,10 @@
+#!/bin/bash
+set -eu -o pipefail
+
+for f in "$@"
+do
+  EXT=$(sed 's:\(.*\)\.\([^\.]\+\)$:\2:' <<< "$f")
+  NAME=$(sed 's:\(.*\)\.\([^\.]\+\)$:\1:' <<< "$f")
+  MD5=$(md5sum "$f" | awk '{ print $1 }')
+  mv -v "$f" "${NAME}_${MD5}.${EXT}"
+done
