@@ -5,6 +5,7 @@ export HISTCONTROL="ignoredups"
 export LC_COLLATE="POSIX"
 export LC_TIME="POSIX"
 export EDITOR="vim"
+export GPG_TTY=$(tty)
 
 umask 022
 
