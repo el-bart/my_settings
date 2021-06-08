@@ -1,0 +1,2 @@
+#!/bin/bash -e
+exec openssl x509 -text -noout -fingerprint -sha256 -in "$@"
