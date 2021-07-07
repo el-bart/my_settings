@@ -1,0 +1,8 @@
+#!/bin/bash
+set -eu -o pipefail
+if [ $# -ne 1 ]
+then
+  echo "$0 <host:port>" >&2
+  exit 2
+fi
+exec openssl s_client -connect "$1" < /dev/null
