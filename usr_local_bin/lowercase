@@ -1,0 +1,11 @@
+#!/bin/bash
+for file in "$@"
+do
+  dir=$(dirname "$file")
+  fno=$(basename "$file")
+  fn=$(basename "$file" | tr '[:upper:]' '[:lower:]')
+  if [ "$fno" != "$fn" ]
+  then
+    mv "$file" "$dir/$fn"
+  fi
+done
