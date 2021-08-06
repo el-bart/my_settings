@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ $# -lt 1 ]
+then
+  echo "$0 <word> [options]" >&2
+  exit 1
+fi
+
+TMP=$(mktemp)
+trap "rm -f '$TMP'" EXIT
+
+trans -download-audio-as "$TMP" "$@"
+mpg123 "$TMP" > /dev/null 2>&1
