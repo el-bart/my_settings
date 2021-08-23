@@ -311,7 +311,6 @@ for_window [class="Tor Browser"] floating enable
 #exec --no-startup-id xfce4-power-manager
 #exec --no-startup-id krandrtray
 #exec --no-startup-id keepassx
-exec --no-startup-id wicd-client -t
 exec --no-startup-id run_on_inet transmission-gtk -m
 exec --no-startup-id run_on_inet quiterss
 exec --no-startup-id rand_wallpaper_service
