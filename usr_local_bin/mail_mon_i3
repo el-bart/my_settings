@@ -1,0 +1,15 @@
+#!/bin/bash
+set -eu -o pipefail
+
+if mail < /dev/null > /dev/null
+then
+  # has mail
+  echo -e '<big>@\U1F584</big>'
+  echo
+  echo '#FF0000'
+else
+  # no mail
+  echo -e '<big>@\U1F582</big>'
+  echo
+  # use default font
+fi
