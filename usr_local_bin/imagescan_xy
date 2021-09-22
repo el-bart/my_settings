@@ -1,0 +1,21 @@
+#!/bin/bash
+set -eu -o pipefail
+
+if [ $# -lt 4 ]
+then
+  echo "$(basename "$0") <dpi> <size_x_mm> <size_y_mm> <output.jpg> [options]" >&2
+  exit 2
+fi
+
+DPI=$1
+SIZE_X=$2
+SIZE_Y=$3
+FILE=$4
+shift 4
+
+exec imagescan \
+       "$DPI" \
+       "$FILE" \
+       -x "${SIZE_X}mm" \
+       -y "${SIZE_Y}mm" \
+       "$@"
