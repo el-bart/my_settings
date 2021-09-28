@@ -285,6 +285,7 @@ bindsym Control+Mod1+w exec firefox
 bindsym Control+Mod1+o exec torbrowser-launcher
 bindsym Control+Mod1+c exec chromium
 bindsym Control+Mod1+t exec qutebrowser
+bindsym Control+Mod1++Shift+t exec torbrowser-launcher
 # screen locking
 bindsym Control+Mod1+l       exec xtrlock
 bindsym Control+Mod1+Shift+l exec blank-lock
@@ -312,5 +313,5 @@ for_window [class="Tor Browser"] floating enable
 #exec --no-startup-id krandrtray
 #exec --no-startup-id keepassx
 exec --no-startup-id run_on_inet transmission-gtk -m
-exec --no-startup-id run_on_inet quiterss
+#exec --no-startup-id run_on_inet quiterss
 exec --no-startup-id rand_wallpaper_service
