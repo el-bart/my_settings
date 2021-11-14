@@ -1,0 +1,11 @@
+#!/bin/bash
+set -eu -o pipefail
+app=$(basename "$0")
+screen=$(xrandr | grep 'connected' | grep 'primary' | awk '{ print $1 }')
+tablets=$(xinput | grep '\<Wacom\>' | sed 's/.*\<id=\([0-9]\+\).*/\1/')
+
+for tab in $tablets
+do
+  echo "$app: mapping $tab to screen $screen"
+  xinput map-to-output "$tab" "$screen"
+done
