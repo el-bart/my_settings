@@ -282,7 +282,6 @@ bindsym Control+Mod1+k exec kwrite
 bindsym Control+Mod1+q exec konqueror
 bindsym Control+Mod1+h exec "konqueror ~/"
 bindsym Control+Mod1+w exec firefox
-bindsym Control+Mod1+o exec torbrowser-launcher
 bindsym Control+Mod1+c exec chromium
 bindsym Control+Mod1+t exec qutebrowser
 bindsym Control+Mod1++Shift+t exec torbrowser-launcher
