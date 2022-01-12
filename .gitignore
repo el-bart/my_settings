@@ -3,3 +3,4 @@
 *.swo
 # git tmp files
 *.orig
+*.rej
