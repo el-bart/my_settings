@@ -1,0 +1,23 @@
+#!/bin/bash
+set -eu -o pipefail
+shopt -s nullglob
+
+if [ $# -lt 2 ]
+then
+  "$(basename "$0") '*.foo' <command> [args...]" >&2
+  exit 2
+fi
+pattern="$1"
+shift 1
+CMD_BACKGROUND=${CMD_BACKGROUND:-false}
+env
+
+for f in $pattern
+do
+  if "$CMD_BACKGROUND"
+  then
+    "$@" "$f" &
+  else
+    "$@" "$f"
+  fi
+done

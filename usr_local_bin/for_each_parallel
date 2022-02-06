@@ -1,0 +1,3 @@
+#!/bin/bash
+export CMD_BACKGROUND=true
+for_each "$@"
