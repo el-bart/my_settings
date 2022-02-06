@@ -10,7 +10,6 @@ fi
 pattern="$1"
 shift 1
 CMD_BACKGROUND=${CMD_BACKGROUND:-false}
-env
 
 for f in $pattern
 do
