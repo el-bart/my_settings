@@ -4,7 +4,7 @@ shopt -s nullglob
 
 if [ $# -lt 2 ]
 then
-  "$(basename "$0") '*.foo' <command> [args...]" >&2
+  echo "$(basename "$0") '*.foo' <command> [args...]" >&2
   exit 2
 fi
 pattern="$1"
