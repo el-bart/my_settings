@@ -1,0 +1,26 @@
+#!/bin/bash
+set -eu -o pipefail
+app=$(basename "$0")
+context=$(sed 's#^sync_\(.*\)_partitions#\1#g' <<< "$app")
+echo "$app: syncing $context partitions..."
+
+cd "/mnt/$context"
+
+umount * 2>/dev/null || true
+
+for d in *
+do
+  mount "$d"
+done
+
+for d in *
+do
+  if [ "$d" == "1" ] ; then continue ; fi
+  echo "$app: syncing $PWD/$d..."
+  rsync --quiet -rPl --delete "1"/* "$d/"
+done
+
+#tree -a *
+#ls -alh *
+umount *
+echo "$app: all good"

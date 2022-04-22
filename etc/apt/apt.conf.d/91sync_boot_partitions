@@ -1,0 +1,2 @@
+DPkg::Post-Invoke { "/usr/local/sbin/sync_boot_partitions"; };
+RPM::Post-Invoke  { "/usr/local/sbin/sync_boot_partitions"; };
