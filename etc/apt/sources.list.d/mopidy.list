@@ -1,5 +1,3 @@
-# Mopidy APT archive
-# Built on Debian 9 (buster)
-# curl -q https://apt.mopidy.com/buster.list
-deb     http://apt.mopidy.com/ buster main contrib non-free
-deb-src http://apt.mopidy.com/ buster main contrib non-free
+# TODO: add 'bullseye'...
+deb     [signed-by=/usr/share/keyrings/mopidy-keyring.gpg] http://apt.mopidy.com/ buster main contrib non-free
+deb-src [signed-by=/usr/share/keyrings/mopidy-keyring.gpg] http://apt.mopidy.com/ buster main contrib non-free
