@@ -1,0 +1,9 @@
+#!/bin/bash
+set -eu -o pipefail
+exec youtube-dl \
+    --continue \
+    --no-overwrites \
+    --ignore-errors \
+    --extract-audio \
+    --audio-format vorbis \
+    "$@"
