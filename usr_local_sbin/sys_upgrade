@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+
+renice -n 10 -p "$$"
+ionice -c 3  -p "$$"
+
+apt-file update
+apt update
+apt autoremove
+apt dist-upgrade "$@"
+apt autoremove
+
+check-support-status
