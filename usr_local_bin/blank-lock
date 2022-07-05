@@ -28,7 +28,9 @@ monitor_inactivity &
 MONITOR=$!
 
 log "locking screen"
+dunstctl set-paused true
 xtrlock -b
+dunstctl set-paused false
 log "screen unlocked"
 
 kill "$MONITOR"
