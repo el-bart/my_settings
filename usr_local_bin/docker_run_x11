@@ -1,0 +1,6 @@
+#!/bin/bash
+exec docker run \
+  --env DISPLAY="$DISPLAY" \
+  --volume "/tmp/.X11-unix:/tmp/.X11-unix:ro" \
+  --env QT_X11_NO_MITSHM=1 \
+  "$@"
