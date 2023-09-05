@@ -1,0 +1,15 @@
+#!/bin/bash
+if [ $# -lt 1 ]
+then
+  echo "$0 <cmd> [args...]" >&2
+  exit 2
+fi
+
+"$@" && exit 0
+date
+
+while sleep 1
+do
+  "$@" && exit 0
+   date
+done
