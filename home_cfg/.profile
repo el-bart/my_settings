@@ -16,6 +16,8 @@ echo
 echo
 
 # show tasks to be done
+#task cal
+ncal -w -M -A 2 -b
 task long -BLOCKED
 
 # proxy for TOR
