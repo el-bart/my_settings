@@ -17,7 +17,7 @@ echo
 
 # show tasks to be done
 #task cal
-ncal -w -M -A 2 -b
+ncal -w -M -A 5 -b
 task long -BLOCKED
 
 # proxy for TOR
