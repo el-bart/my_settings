@@ -1,2 +1,28 @@
 #!/bin/bash -e
-exec git difftool --tool=kdiff3 -y "$@"
+set -eu -o pipefail
+app=$(basename "$0")
+
+gui=()
+gui+=(kdiff3)
+
+tui=()
+tui+=(vimdiff)
+
+function find_tool
+{
+  for t in "$@"
+  do
+    type "$t" > /dev/null 2>&1 && { echo "$t" ; return 0 ; }
+  done
+  echo "$app: failed to find any of the possible tools: $*" >&2
+  exit 2
+}
+
+if [ -z "${DISPLAY:-}" ]
+then
+  tool=$(find_tool "${tui[@]}")
+else
+  tool=$(find_tool "${gui[@]}")
+fi
+
+exec git difftool --tool="$tool" -y "$@"
