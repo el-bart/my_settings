@@ -1,0 +1,19 @@
+#!/bin/bash
+set -eu -o pipefail
+
+TMP_DIR="/var/run/user/$UID"
+mkdir -p "$TMP_DIR"
+
+SSH_AGENT_FILE="$TMP_DIR/ssh-agent.sh"
+if ! [ -f "$SSH_AGENT_FILE" ]
+then
+  ssh-agent > "$SSH_AGENT_FILE"
+fi
+cat "$SSH_AGENT_FILE" | grep -v '^echo'
+
+GPG_AGENT_FILE="$TMP_DIR/gpg-agent.sh"
+if ! [ -f "$GPG_AGENT_FILE" ]
+then
+  gpg-agent --daemon --enable-ssh-support > "$GPG_AGENT_FILE"
+fi
+cat "$GPG_AGENT_FILE" | grep -v '^echo'
