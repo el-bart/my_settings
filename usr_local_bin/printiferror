@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+# it's a simple alternative to 'chronic', that keeps stdout and stderr together, in order as they appeared.
+#
 if [ $# -lt 2 ] || [ "$1" != "-c" ]
 then
   echo "`basename "$0"` -c <cmd> <arg1> <arg2> ... <argN>" >&2
