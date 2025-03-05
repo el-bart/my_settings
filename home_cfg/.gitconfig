@@ -1,7 +1,7 @@
 [user]
 	name = bartek 'basz' szurgot
 	#email = a@b.c
-	#signingkey = DB8991C8
+	#signingkey = ABCDEF01
 [color]
 	ui = auto
 [merge]
@@ -17,9 +17,17 @@
 	br = branch
 [push]
 	default = simple
+	autoSetupRemote = true
+	followTags = true
 [commit]
 	gpgsign = true
+	verbose = true
 [pull]
 	rebase = false
 [init]
 	defaultBranch = master
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
