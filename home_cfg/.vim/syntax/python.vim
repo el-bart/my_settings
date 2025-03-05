@@ -1,5 +1,6 @@
 " attach default script for proper formatting
-syntax include @Python /usr/share/vim-scripts/python-indent/indent/python.vim
+"syntax include @Python /usr/share/vim-scripts/python-indent/indent/python.vim
+syntax include @Python /usr/share/vim/vim91/indent/python.vim
 
 " decrease sky-rocketing indentation!
 set shiftwidth=4
