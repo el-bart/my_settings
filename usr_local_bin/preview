@@ -34,7 +34,7 @@ then
     exec file "$1"
   fi
 
-  hash bat > /dev/null 2>&1 && exec bat --style="${BAT_STYLE:-numbers}" --color=always --pager=never --highlight-line="${line:-0}" -- "$file"
+  hash batcat > /dev/null 2>&1 && exec batcat --style="${BAT_STYLE:-numbers}" --color=always --pager=never --highlight-line="${line:-0}" -- "$file"
   exec cat "$1"
 fi
 
