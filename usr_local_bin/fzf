@@ -4,4 +4,4 @@ args=()
 args+=(--style minimal)
 args+=(--preview 'preview {}')
 args+=(--bind 'focus:transform-header:file --brief {}')
-exec /binfzf "${args[@]}" "$@"
+exec /usr/bin/fzf "${args[@]}" "$@"
