@@ -1,0 +1,68 @@
+#!/bin/bash
+# build based on:
+# https://github.com/junegunn/fzf/blob/master/bin/fzf-preview.sh
+set -euo pipefail
+
+if [ $# -ne 1 ]
+then
+  echo "$0 filename[:lineno][:ignored]" >&2
+  exit 2
+fi
+
+file=${1/#\~\//$HOME/}
+
+line=0
+if [[ ! -r $file ]]
+then
+  if [[ $file =~ ^(.+):([0-9]+)\ *$ ]] && [[ -r ${BASH_REMATCH[1]} ]]
+  then
+    file=${BASH_REMATCH[1]}
+    line=${BASH_REMATCH[2]}
+  elif [[ $file =~ ^(.+):([0-9]+):[0-9]+\ *$ ]] && [[ -r ${BASH_REMATCH[1]} ]]
+  then
+    file=${BASH_REMATCH[1]}
+    line=${BASH_REMATCH[2]}
+  fi
+fi
+
+file_type=$(file --brief --dereference --mime -- "$file")
+
+if [[ ! $file_type =~ image/ ]]
+then
+  if [[ $file_type =~ =binary ]]
+  then
+    exec file "$1"
+  fi
+
+  hash bat > /dev/null 2>&1 && exec bat --style="${BAT_STYLE:-numbers}" --color=always --pager=never --highlight-line="${line:-0}" -- "$file"
+  exec cat "$1"
+fi
+
+dim=${FZF_PREVIEW_COLUMNS:-}x${FZF_PREVIEW_LINES:-}
+if [[ $dim = x ]]
+then
+  dim=$(stty size < /dev/tty | awk '{print $2 "x" $1}')
+elif ! [[ $KITTY_WINDOW_ID ]] && (( FZF_PREVIEW_TOP + FZF_PREVIEW_LINES == $(stty size < /dev/tty | awk '{print $1}') ))
+then
+  # Avoid scrolling issue when the Sixel image touches the bottom of the screen
+  # * https://github.com/junegunn/fzf/issues/2544
+  dim=${FZF_PREVIEW_COLUMNS}x$((FZF_PREVIEW_LINES - 1))
+fi
+
+# 1. Use icat (from Kitty) if kitten is installed
+if [[ "${KITTY_WINDOW_ID:-}" ]] || [[ "${GHOSTTY_RESOURCES_DIR:-}" ]] && hash kitten > /dev/null
+then
+  # 1. 'memory' is the fastest option but if you want the image to be scrollable,
+  #    you have to use 'stream'.
+  #
+  # 2. The last line of the output is the ANSI reset code without newline.
+  #    This confuses fzf and makes it render scroll offset indicator.
+  #    So we remove the last line and append the reset code to its previous line.
+  kitten icat --clear --transfer-mode=memory --unicode-placeholder --stdin=no --place="$dim@0x0" "$file" | sed '$d' | sed $'$s/$/\e[m/'
+  exit 0
+fi
+
+# preview image, whenever possible
+hash chafa  > /dev/null 2>&1 && exec chafa -s "$dim" "$file"
+hash imgcat > /dev/null 2>&1 && exec imgcat -W "${dim%%x*}" -H "${dim##*x}" "$file"
+exec file "$file"
