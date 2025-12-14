@@ -10,8 +10,8 @@ function log
 
 swayidle -w \
   timeout 10 \
-    'swaymsg "output * dpms off"' \
-    resume 'swaymsg "output * dpms on"' &
+    "swaymsg \"output 'DP-1' dpms off ; output 'DP-2' dpms off ; output 'DP-3' dpms off\"" \
+    resume "swaymsg \"output '*'    dpms on\"" &
 MONITOR=$!
 
 log "locking screen"
