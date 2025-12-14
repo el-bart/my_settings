@@ -8,34 +8,19 @@ function log
   logger "$MSG"
 }
 
-
-function monitor_inactivity
-{
-  while sleep 10
-  do
-    [ "$(xprintidle)" -lt "$((30*1000))" ] && continue
-    xset dpms force off
-    sleep 20
-  done
-}
-
-
-#
-# main
-#
-
-monitor_inactivity &
+swayidle -w \
+  timeout 10 \
+    'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' &
 MONITOR=$!
 
 log "locking screen"
-dunstctl set-paused true
-xtrlock -b
-dunstctl set-paused false
+swaylock --color 00000000 --show-failed-attempts # --daemonize
 log "screen unlocked"
 
 kill "$MONITOR"
-timeout 5 wait "$MONITOR"
+wait "$MONITOR"
 log "monitor script stopped"
 
 log "disabling screen blanking"
-prevent_monitor_sleep
+swaymsg output "*" dpms on
