@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ $# -lt 1 ]
+then
+  echo "$0 <user@host>" >&2
+  exit 2
+fi
+exec ssh -L 5900:localhost:5900 "$@" WAYLAND_DISPLAY=wayland-1 wayvnc -v
