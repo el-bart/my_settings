@@ -1,0 +1,10 @@
+[Unit]
+Description=RAID speeds settings
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/raid_speeds
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

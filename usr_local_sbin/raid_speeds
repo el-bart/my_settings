@@ -1,0 +1,6 @@
+#!/bin/bash
+set -euo pipefail
+
+# make sure RAID rebuild does not take infinity
+echo $((2*1024*1024)) > /proc/sys/dev/raid/speed_limit_max
+echo $((    40*1024)) > /proc/sys/dev/raid/speed_limit_min
