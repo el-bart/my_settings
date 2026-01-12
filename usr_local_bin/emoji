@@ -23,6 +23,8 @@ do
     "rocket")        wtype "🚀" ;;
     "poo")           wtype "💩" ;;
     "rolling_eyes")  wtype "🙄" ;;
+    "fire")          wtype "🔥" ;;
+    "snowman")       wtype "⛄" ;;
     *)               wtype "?"  ;;
   esac
 done

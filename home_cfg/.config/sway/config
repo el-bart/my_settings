@@ -377,3 +377,5 @@ bindsym Mod5+k       exec emoji skull
 bindsym Mod5+j       exec emoji sunglasses
 bindsym Mod5+i       exec emoji innocent
 bindsym Mod5+y       exec emoji rolling_eyes
+bindsym Mod5+f       exec emoji fire
+bindsym Mod5+w       exec emoji snowman
