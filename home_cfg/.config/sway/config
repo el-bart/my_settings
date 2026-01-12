@@ -368,11 +368,11 @@ bindsym Mod5+Shift+r exec emoji rocket
 bindsym Mod5+p       exec emoji spock
 bindsym Mod5+Shift+p exec emoji poo
 bindsym Mod5+t       exec emoji thinking
+bindsym Mod5+Shift+t exec emoji cold_sweat
 bindsym Mod5+h       exec emoji scream
 bindsym Mod5+Shift+h exec emoji hushed
 bindsym Mod5+u       exec emoji thumbs_up
 bindsym Mod5+d       exec emoji thumbs_down
-bindsym Mod5+l       exec emoji cold_sweat
 bindsym Mod5+k       exec emoji skull
 bindsym Mod5+j       exec emoji sunglasses
 bindsym Mod5+i       exec emoji innocent
