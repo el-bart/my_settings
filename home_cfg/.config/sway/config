@@ -359,3 +359,21 @@ for_window [class="Tor Browser"] floating enable
 #exec --no-startup-id run_on_inet transmission-gtk -m
 #exec --no-startup-id run_on_inet quiterss
 exec --no-startup-id rand_wallpaper_service
+
+# emoji
+bindsym Mod5+g       exec emoji grin
+bindsym Mod5+shift+g exec emoji grimacing
+bindsym Mod5+r       exec emoji rotfl
+bindsym Mod5+Shift+r exec emoji rocket
+bindsym Mod5+p       exec emoji spock
+bindsym Mod5+Shift+p exec emoji poo
+bindsym Mod5+t       exec emoji thinking
+bindsym Mod5+h       exec emoji scream
+bindsym Mod5+Shift+h exec emoji hushed
+bindsym Mod5+u       exec emoji thumbs_up
+bindsym Mod5+d       exec emoji thumbs_down
+bindsym Mod5+l       exec emoji cold_sweat
+bindsym Mod5+k       exec emoji skull
+bindsym Mod5+j       exec emoji sunglasses
+bindsym Mod5+i       exec emoji innocent
+bindsym Mod5+y       exec emoji rolling_eyes

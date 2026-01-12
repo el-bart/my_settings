@@ -1,0 +1,28 @@
+#!/bin/bash
+set -euo pipefail
+
+for name in "$@"
+do
+  case "$name" in
+    "cold_swet")     wtype "😅" ;;
+    "grimacing")     wtype "😬" ;;
+    "grin")          wtype "😁" ;;
+    "hushed")        wtype "😯" ;;
+    "innocent")      wtype "😇" ;;
+    "rotfl")         wtype "🤣" ;;
+    "scream")        wtype "😱" ;;
+    "skull")         wtype "💀" ;;
+    "sunglasses")    wtype "😎" ;;
+    "thinking")      wtype "🤔" ;;
+    "speak_no_evil") wtype "🙊" ;;
+    "hear_no_evil")  wtype "🙉" ;;
+    "see_no_evil")   wtype "🙈" ;;
+    "spock")         wtype "🖖" ;;
+    "thumbs_up")     wtype "👍" ;;
+    "thumbs_down")   wtype "👎" ;;
+    "rocket")        wtype "🚀" ;;
+    "poo")           wtype "💩" ;;
+    "rolling_eyes")  wtype "🙄" ;;
+    *)               wtype "?"  ;;
+  esac
+done
