@@ -373,9 +373,11 @@ bindsym Mod5+h       exec emoji scream
 bindsym Mod5+Shift+h exec emoji hushed
 bindsym Mod5+u       exec emoji thumbs_up
 bindsym Mod5+d       exec emoji thumbs_down
+bindsym Mod5+Shift+d exec emoji shrug
 bindsym Mod5+k       exec emoji skull
 bindsym Mod5+j       exec emoji sunglasses
 bindsym Mod5+i       exec emoji innocent
 bindsym Mod5+y       exec emoji rolling_eyes
 bindsym Mod5+f       exec emoji fire
+bindsym Mod5+Shift+f exec emoji folded_hands
 bindsym Mod5+w       exec emoji snowman

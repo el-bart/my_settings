@@ -25,6 +25,8 @@ do
     "rolling_eyes")  wtype "🙄" ;;
     "fire")          wtype "🔥" ;;
     "snowman")       wtype "⛄" ;;
+    "folded_hands")  wtype "🙏" ;;
+    "shrug")         wtype "🤷" ;;
     *)               wtype "?"  ;;
   esac
 done
