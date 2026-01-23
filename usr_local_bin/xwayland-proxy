@@ -1,0 +1,11 @@
+#!/bin/bash
+set -euo pipefail
+
+DID=:$$
+Xwayland "$DID" &
+pid=$!
+trap "kill '$pid'" EXIT
+
+unset WAYLAND_DISPLAY
+export DISPLAY=$DID
+"$@"
