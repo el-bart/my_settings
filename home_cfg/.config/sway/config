@@ -375,7 +375,7 @@ bindsym Mod5+h       exec emoji scream
 bindsym Mod5+i       exec emoji innocent
 bindsym Mod5+j       exec emoji sunglasses
 bindsym Mod5+k       exec emoji skull
-bindsym Mod5+m       exec emoji face_palm
+bindsym Mod5+x       exec emoji face_palm
 bindsym Mod5+p       exec emoji spock
 bindsym Mod5+r       exec emoji rotfl
 bindsym Mod5+t       exec emoji thinking
