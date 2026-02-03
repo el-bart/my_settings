@@ -102,28 +102,28 @@ bindsym $mod+z focus child
 #bindsym $mod+d focus child
 
 # start workspaces on a specific screens
-workspace 1  output DVI-0
-workspace 2  output DVI-0
-workspace 3  output DVI-0
-workspace 4  output DVI-0
-workspace 5  output DVI-0
-workspace 6  output DVI-0
-workspace 7  output DVI-0
-workspace 8  output DVI-0
-workspace 9  output DVI-0
-workspace 10 output DVI-0
-workspace 11 output DVI-1
-workspace 12 output DVI-1
-workspace 13 output DVI-1
-workspace 14 output DVI-1
-workspace 15 output DVI-1
-workspace 16 output DVI-1
-workspace 17 output DVI-1
-workspace 18 output DVI-1
-workspace 19 output DVI-1
-workspace 20 output DVI-1
-workspace 21 output DVI-1
-workspace 22 output DVI-1
+workspace 1  output DisplayPort-0
+workspace 2  output DisplayPort-0
+workspace 3  output DisplayPort-0
+workspace 4  output DisplayPort-0
+workspace 5  output DisplayPort-0
+workspace 6  output DisplayPort-0
+workspace 7  output DisplayPort-0
+workspace 8  output DisplayPort-0
+workspace 9  output DisplayPort-0
+workspace 10 output DisplayPort-1
+workspace 11 output DisplayPort-1
+workspace 12 output DisplayPort-1
+workspace 13 output DisplayPort-1
+workspace 14 output DisplayPort-1
+workspace 15 output DisplayPort-1
+workspace 16 output DisplayPort-1
+workspace 17 output DisplayPort-2
+workspace 18 output DisplayPort-2
+workspace 19 output DisplayPort-2
+workspace 20 output DisplayPort-2
+workspace 21 output DisplayPort-2
+workspace 22 output DisplayPort-2
 
 # switch to workspace
 bindsym $mod+1   workspace 1
@@ -298,9 +298,10 @@ exec --no-startup-id ~/bin/.background_wallpaper_changer
 # make sure monitor does not go into sleep mode
 exec --no-startup-id prevent_monitor_sleep
 # allow root to connect to X server (for sudo and stuff)
-exec --no-startup-id xhost +si:localuser:root
+#exec --no-startup-id xhost +si:localuser:root
 # background player daemon
-exec --no-startup-id run_on_inet mopidy
+#exec --no-startup-id run_on_inet mopidy
+#exec --no-startup-id ~/bin/x11_desktops
 
 # NOTE: use 'xprop' to get window's properties
 # some windows are meant to be floating
