@@ -1,6 +1,9 @@
 #!/bin/bash
 set -eu -o pipefail
-exec yt-dlp \
+readonly out_dir="$1"
+shift 1
+exec yt-dlp-docker \
+    "$out_dir" \
     --continue \
     --no-overwrites \
     --ignore-errors \
