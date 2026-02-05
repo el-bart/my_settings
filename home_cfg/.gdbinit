@@ -13,6 +13,9 @@ set disassembly-flavor intel
 focus cmd
 set tui mouse-events off
 
+set pagination off
+set print elements unlimited
+
 # helper funcion to print ascii and hex when dumping memory part
 # https://stackoverflow.com/questions/25786982/how-can-gdb-show-both-hex-and-ascii-when-examing-memory
 define xac
