@@ -1,0 +1,4 @@
+#!/bin/bash
+exec xwayland-proxy \
+  run-in-openbox \
+    "$@"
