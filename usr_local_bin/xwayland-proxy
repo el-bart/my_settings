@@ -1,11 +1,29 @@
 #!/bin/bash
 set -euo pipefail
+app=$(basename "$0")
 
-DID=:$$
-Xwayland "$DID" &
+DID="$$"
+Xwayland ":$DID" &
 pid=$!
 trap "kill '$pid'" EXIT
 
+t=0.1
+dt=0.5
+max=6
+while ! [ -e "/tmp/.X11-unix/X$DID" ]
+do
+  echo "$app: $(date) waiting for Xwayland to come up (delay $t[s])..."
+  sleep "$t"
+  t=$(bc -ql <<< "$t + $dt")
+  ((max--))
+  if [ "$max" -eq 0 ]
+  then
+    echo "$app: it does not seem like Xwayland will be coming up - aborting..." >&2
+    exit 13
+  fi
+done
+
+set -x
 unset WAYLAND_DISPLAY
-export DISPLAY=$DID
+export DISPLAY=":$DID"
 "$@"
