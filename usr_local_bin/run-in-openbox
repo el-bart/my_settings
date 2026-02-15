@@ -1,0 +1,16 @@
+#!/bin/bash
+set -euo pipefail
+
+tmp=$(mktemp "/tmp/.run-in-openbox-cmd.XXXXXX")
+trap "rm -f '$tmp'" EXIT
+chmod u+x "$tmp"
+
+cat >> "$tmp" <<EOF
+#!/bin/bash
+$(printf '%q ' "$@")
+ret=\$?
+openbox --exit
+exit "\$ret"
+EOF
+
+openbox --startup "$tmp"
