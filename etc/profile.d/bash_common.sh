@@ -9,6 +9,13 @@ export GPG_TTY=$(tty)
 
 umask 022
 
+_ee_helper()
+{
+  "$@" && exit 0
+}
+alias ee=_ee_helper
+alias e='exec'
+
 alias pf="ps axf"
 alias pu="ps xf"
 alias ls="/bin/ls --color=auto"
@@ -28,8 +35,7 @@ alias sbc='source /etc/bash_completion'
 alias todoA='todo -G -A -f -done'
 alias cm='cmake -G Ninja'
 alias n='ninja'
-alias e='exec'
-alias e='retry_until_pass'
+alias r='retry_until_pass'
 alias cdt='cd "$(mktemp -d)"'
 alias glb='grep --line-buffered'
 alias cpn='nice ionice cp'
