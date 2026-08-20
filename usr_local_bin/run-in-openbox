@@ -7,10 +7,10 @@ chmod u+x "$tmp"
 
 cat >> "$tmp" <<EOF
 #!/bin/bash
+set -euo pipefail
+trap 'openbox --exit' EXIT
+cd $(printf '%q ' "$PWD")
 $(printf '%q ' "$@")
-ret=\$?
-openbox --exit
-exit "\$ret"
 EOF
 
 openbox --startup "$tmp"

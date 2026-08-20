@@ -23,7 +23,6 @@ do
   fi
 done
 
-set -x
 unset WAYLAND_DISPLAY
 export DISPLAY=":$DID"
 "$@"
