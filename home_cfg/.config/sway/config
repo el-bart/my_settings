@@ -35,7 +35,10 @@ output DP-3 {
 #  resume       'swaymsg "output \* dpms on"'
 
 # map drawing tables to 1st screen
-input "type:tablet_tool" map_to_output "DP-1"
+input "1386:890:Wacom_One_by_Wacom_S_Pen" {
+    map_to_output "DP-1"
+    tool_mode pen absolute
+}
 
 # PL układ klawiatury
 input type:keyboard xkb_layout "pl"
@@ -329,9 +332,7 @@ bindsym Control+Mod1+c exec chromium --incognito
 #bindsym Control+Mod1+t exec qutebrowser
 #bindsym Control+Mod1++Shift+t exec torbrowser-launcher
 # screen locking
-#bindsym Control+Mod1+l       exec xtrlock
 bindsym Control+Mod1+l       exec swaylock --color 00000000 --show-failed-attempts --show-failed-attempts --daemonize
-bindsym Control+Mod1+Shift+l exec blank-lock
 #bindsym Control+Mod1+Shift+h exec swaylock --color 00000000 --show-failed-attempts --daemonize && systemctl suspend
 # print screen
 bindsym Print exec grimshot copy anything -
