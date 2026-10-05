@@ -23,3 +23,8 @@ task long -BLOCKED
 # proxy for TOR
 #export http_proxy=http://127.0.0.1:8118/
 #export https_proxy="$http_proxy"
+
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/openssh_agent"
+[ "${SWAYSOCK:-}" == "" ] || export XDG_CURRENT_DESKTOP="sway"
+
+rm -f ~/.*_history-*.tmp
