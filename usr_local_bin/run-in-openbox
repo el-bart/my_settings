@@ -8,7 +8,8 @@ chmod u+x "$tmp"
 cat >> "$tmp" <<EOF
 #!/bin/bash
 set -euo pipefail
-export QT_QPA_PLATFORM="${QT_QPA_PLATFORM:-xcb}"
+export QT_QPA_PLATFORM=xcb
+export GDK_BACKEND=x11
 trap 'openbox --exit' EXIT
 cd $(printf '%q ' "$PWD")
 $(printf '%q ' "$@")
